@@ -5,20 +5,32 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", guardarRegistro);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  if (localStorage.getItem("dark-mode") === "enabled") {
+    document.body.classList.add("dark-mode");
+  }
+});
 
 function mostrarSeccion(seccion) {
-    document.querySelectorAll('main section').forEach(section => {
-        section.style.display = 'none';
-    });
-    const target = document.getElementById(seccion);
-    if (target) {
-        target.style.display = 'block';
-    }
+  document.querySelectorAll("main section").forEach((section) => {
+    section.style.display = "none";
+  });
+  const target = document.getElementById(seccion);
+  if (target) {
+    target.style.display = "block";
+  }
 }
 
 function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("dark-mode", "enabled");
+  } else {
+    localStorage.setItem("dark-mode", "disabled");
+  }
 }
+
 function guardarRegistro() {
   let nombre = document.getElementById("nombre").value;
   let email = document.getElementById("email").value;
@@ -111,6 +123,4 @@ function guardarRegistro() {
 
   // Redirigir automáticamente a la sección de registros
   mostrarSeccion("verRegistros");
-
-
 }
