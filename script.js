@@ -30,7 +30,6 @@ function toggleDarkMode() {
     localStorage.setItem("dark-mode", "disabled");
   }
 }
-
 function guardarRegistro() {
   let nombre = document.getElementById("nombre").value;
   let email = document.getElementById("email").value;

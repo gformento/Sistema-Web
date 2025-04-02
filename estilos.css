@@ -13,6 +13,7 @@ body.dark-mode form {
   background-color: #333;
   color: white;
 }
+
 body.dark-mode label {
   color: white;
 }
@@ -97,7 +98,7 @@ nav ul li ul li a {
 }
 
 nav ul li ul li a:hover {
-  background: #666;
+  background: #5f5c5c;
   color: #4da8da;
 }
 
