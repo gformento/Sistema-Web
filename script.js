@@ -5,13 +5,20 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", guardarRegistro);
 });
 
+
 function mostrarSeccion(seccion) {
-  document
-    .querySelectorAll("main section")
-    .forEach((sec) => (sec.style.display = "none"));
-  document.getElementById(seccion).style.display = "block";
+    document.querySelectorAll('main section').forEach(section => {
+        section.style.display = 'none';
+    });
+    const target = document.getElementById(seccion);
+    if (target) {
+        target.style.display = 'block';
+    }
 }
 
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
 function guardarRegistro() {
   let nombre = document.getElementById("nombre").value;
   let email = document.getElementById("email").value;
@@ -104,4 +111,6 @@ function guardarRegistro() {
 
   // Redirigir automáticamente a la sección de registros
   mostrarSeccion("verRegistros");
+
+
 }
