@@ -1,0 +1,66 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Web</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema Web</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+                <li><a href="#">Registros</a>
+                    <ul>
+                        <li><a href="#" onclick="mostrarSeccion('verRegistros')">Ver Registros</a></li>
+                        <li><a href="#" onclick="mostrarSeccion('nuevoRegistro')">Nuevo Registro</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Configuración</a>
+                    <ul>
+                        <li><a href="#" onclick="mostrarSeccion('preferencias')">Preferencias</a></li>
+                        <li><a href="#" onclick="mostrarSeccion('seguridad')">Seguridad</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido al Sistema</h2>
+        </section>
+        
+        <section id="nuevoRegistro">
+            <h2>Ingresar Datos</h2>
+            <form id="dataForm">
+                <input type="hidden" id="editIndex">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                
+                <button type="button" id="guardarBtn">Guardar</button>
+            </form>
+        </section>
+        
+        <section id="verRegistros">
+            <h2>Registros</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
