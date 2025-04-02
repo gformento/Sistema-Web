@@ -62,6 +62,22 @@ function guardarRegistro() {
     let editIndex = document.getElementById("editIndex").value;
     let registros = JSON.parse(localStorage.getItem("registros")) || [];
 
+    // Expresiones regulares para validación
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let nombreRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/;
+
+    // Validar nombre
+    if (!nombreRegex.test(nombre)) {
+        alert("El nombre solo puede contener letras y espacios.");
+        return;
+    }
+
+    // Validar email
+    if (!emailRegex.test(email)) {
+        alert("Ingrese un email válido.");
+        return;
+    }
+
     // Validar que no haya registros duplicados
     let existe = registros.some(registro => registro.nombre === nombre || registro.email === email);
     if (existe && editIndex === "") {
@@ -80,6 +96,6 @@ function guardarRegistro() {
     document.getElementById("editIndex").value = "";
     mostrarRegistros();
 
-    // Redirigir a la sección de registros automáticamente
+    // Redirigir automáticamente a la sección de registros
     mostrarSeccion('verRegistros');
 }
