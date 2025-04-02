@@ -1,148 +1,144 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  text-align: center;
 }
 
 header {
-    background: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+  background: #333;
+  color: white;
+  padding: 15px;
+}
+
+nav {
+  background: #222;
+  padding: 10px 0;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    background: #444;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-    position: relative;
-    margin: 0 15px;
+  position: relative;
+  margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background: #555;
+  color: #4da8da;
 }
 
 nav ul li ul {
-    display: none;
-    position: absolute;
-    background: #555;
-    padding: 0;
-    list-style: none;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #444;
+  list-style: none;
+  padding: 0;
+  min-width: 180px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 nav ul li:hover ul {
-    display: block;
+  display: block;
+}
+
+nav ul li ul li {
+  display: block;
 }
 
 nav ul li ul li a {
-    padding: 10px;
-    display: block;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+nav ul li ul li a:hover {
+  background: #666;
+  color: #4da8da;
 }
 
 main {
-    padding: 20px;
-    text-align: center;
+  margin: 20px;
 }
 
 section {
-    display: none;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
+  display: none;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+#inicio {
+  display: block;
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+form {
+  background: white;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-th {
-    background: #007bff;
-    color: white;
-}
-
-td {
-    font-size: 14px;
-}
-
-td button {
-    margin: 5px;
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 5px;
-}
-
-td button.editar {
-    background: #ffc107;
-    color: black;
-}
-
-td button.eliminar {
-    background: #dc3545;
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s ease;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
 button:hover {
-    background: #0056b3;
+  background: #218838;
 }
 
-
-form {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-form label {
-    font-weight: bold;
-    margin-bottom: 5px;
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
-form input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+th {
+  background: #333;
+  color: white;
 }
-
